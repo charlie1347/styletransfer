@@ -1,0 +1,33 @@
+<!DOCTYPE html> <html lang="en">
+<html>
+<head>
+    <meta id="Viewport" name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Style transfer</title>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Raleway);
+		body{
+		    text-align: center;    
+		}
+		h1{
+		    font-family: 'Raleway', sans-serif;
+		    font-weight: normal;
+		    color: #000000;
+		    font-size: 2.5em;
+		}
+	</style>
+</head>
+<body>
+	<div class="block1">
+	<h1>Upload an image for style transfer: </h1>
+    {{error_msg}}
+    <form action="/uploader" method="POST" enctype="multipart/form-data">
+    	<input type="file" name="imagefile">
+        <input type="submit">
+    </form>
+    {% if processed_file %}
+    	<br></br>
+		<img src="data:image/png;base64,{{processed_file}}">
+	{% endif %}
+	<h3>See source code on <a href="https://github.com/charlie1347/styletransfer">github.com/charlie1347</a></h3>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Flask==0.11.1
+flask-cors
+Wheels\Pillow-4.0.0-cp35-cp35m-win_amd64.whl
+tensorflow
